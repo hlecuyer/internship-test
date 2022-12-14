@@ -13,14 +13,18 @@ To do so, you will resolve a problem running a python command as follows:
 The result must be display in standard output:
 Also, it needs to be stored in a postgresql database for log purposes with:
  - execution date of the command
- - the input file path
+ - the input file in a compressed format of your choice
  - The result of the command
 
 Requisite:
- - You can't use ORM to interact with the database
- - You must use [poetry](https://python-poetry.org/)
- - You must package your command with Docker, one container for the app, the other for the bdd with the command to launch to make it work with docker
- - The small project must be a git repository hosted in github. 
+- You can't use ORM to interact with the database
+- You must use [poetry](https://python-poetry.org/)
+- You must package your command with Docker:
+  - One container for the command
+  - One container for the postgres image
+  - At the end, the two container must run simultaneously and communicate with each other
+- You must add a readme describing how to use the command.
+- The small project must be a git repository hosted in github. 
 
 
 ## Stated problem
